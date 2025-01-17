@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
-
+import pyperclip
 
 # 材料数据库
 MATERIALS = {
@@ -332,8 +332,6 @@ if st.button("计算"):
         col1, col2 = st.columns(2)
         with col1:
             st.metric("热流密度", f"{q:.2f} W/m²")
-            import pyperclip
-
             pyperclip.copy(f"{q:.2f}")
         with col2:
             st.metric("总热阻", f"{total_resistance:.2f} m²·K/W")
