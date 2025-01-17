@@ -226,7 +226,7 @@ with col2:
 # 添加材料层
 st.header("添加导热层")
 layers = []
-with st.expander("添加材料层"):
+with st.expander("点击添加导热层"):
     num_layers = st.number_input("层数", min_value=1, value=1)
     for i in range(num_layers):
         st.subheader(f"第 {i+1} 层")
@@ -246,7 +246,7 @@ with st.expander("添加材料层"):
 # 计算并显示结果
 if st.button("计算"):
     if len(layers) == 0:
-        st.error("请至少添加一个材料层")
+        st.error("请至少添加一层")
     else:
         # 计算温度分布
         temperatures, q, total_resistance = calculate_temperature_profile(
